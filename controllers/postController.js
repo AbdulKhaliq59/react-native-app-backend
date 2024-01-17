@@ -21,9 +21,7 @@ const createPostController = async (req, res) => {
       message: "Post Created Successfully",
       post,
     });
-    console.log(req);
   } catch (error) {
-    console.log(error);
     res.status(500).send({
       success: true,
       message: "Error in Create Post APi",

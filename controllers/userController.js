@@ -42,7 +42,7 @@ const registerController = async (req, res) => {
     }
     //hashed pasword
     const hashedPassword = await hashPassword(password);
-    
+
     //save user
     const user = await userModel({
       name,
@@ -55,7 +55,6 @@ const registerController = async (req, res) => {
       message: "User Registered Successfull please login!",
     });
   } catch (error) {
-    console.log(error);
     return res.status(500).send({
       success: false,
       message: "Error in Register API",
@@ -88,7 +87,7 @@ const loginController = async (req, res) => {
     if (!match) {
       return res.status(500).send({
         success: false,
-        message: "Invalid usrname or password",
+        message: "Invalid username or password",
       });
     }
     //TOKEN JWT
@@ -105,7 +104,6 @@ const loginController = async (req, res) => {
       user,
     });
   } catch (error) {
-    console.log(error);
     return res.status(500).send({
       success: false,
       message: "error in login api",
@@ -144,7 +142,6 @@ const updateUserController = async (req, res) => {
       updatedUser,
     });
   } catch (error) {
-    console.log(error);
     res.status(500).send({
       success: false,
       message: "Error In User Update Api",
