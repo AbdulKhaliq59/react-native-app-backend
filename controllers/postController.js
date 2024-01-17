@@ -43,7 +43,7 @@ const getAllPostsContoller = async (req, res) => {
       posts,
     });
   } catch (error) {
-    console.log(error);
+  
     res.status(500).send({
       success: false,
       message: "Error In GETALLPOSTS API",
@@ -62,7 +62,7 @@ const getUserPostsController = async (req, res) => {
       userPosts,
     });
   } catch (error) {
-    console.log(error);
+   
     return res.status(500).send({
       success: false,
       message: "Error in User POST API",
@@ -81,7 +81,7 @@ const deletePostController = async (req, res) => {
       message: "Your Post been deleted!",
     });
   } catch (error) {
-    console.log(error);
+   
     res.status(500).send({
       success: false,
       message: "error in delete post api",
@@ -117,7 +117,7 @@ const updatePostController = async (req, res) => {
       updatedPost,
     });
   } catch (error) {
-    console.log(error);
+
     res.status(500).send({
       success: false,
       message: "Errro in update post api",
